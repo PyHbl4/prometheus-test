@@ -39,5 +39,4 @@ jobs:
             cat .env
             docker-compose up --build -d
             docker-compose exec api npx prisma migrate deploy
-            docker-compose exec api npx prisma generate
           EOF
