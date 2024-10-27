@@ -1,31 +1,31 @@
 name: Deploy to Server
 
-   on:
-     push:
-       branches:
-         - deploy/dev
+on:
+  push:
+    branches:
+      - deploy/dev
 
-   jobs:
-     deploy:
-       runs-on: ubuntu-latest
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
 
-       steps:
-         - name: Checkout code
-           uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-         - name: Set up SSH
-           uses: webfactory/ssh-agent@v0.5.3
-           with:
-             ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-         - name: Copy files to server
-           run: |
-             scp -r ./* root@80.87.110.203:~/my-turborepo
+      - name: Copy files to server
+        run: |
+          scp -r ./* root@80.87.110.203:~/my-turborepo
 
-         - name: SSH commands
-           run: |
-             ssh root@80.87.110.203 << 'EOF'
-               cd ~/my-turborepo
-               docker-compose down
-               docker-compose up --build -d
-             EOF
+      - name: SSH commands
+        run: |
+          ssh root@80.87.110.203 << 'EOF'
+            cd ~/my-turborepo
+            docker-compose down
+            docker-compose up --build -d
+          EOF
