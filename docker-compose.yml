@@ -7,7 +7,7 @@ services:
     ports:
       - "3200:3200"
     environment:
-      DATABASE_URL: $DATABASE_URL
+      DATABASE_URL: "postgresql://postgres:12345@db:5432/test-shop?schema=public"
 
   frontend:
     build:
