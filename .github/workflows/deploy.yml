@@ -34,8 +34,6 @@ jobs:
             # Удаление неиспользуемых контейнеров и образов
             docker container prune -f
             docker image prune -a -f
-            # Применение миграций
-            npx prisma migrate deploy
             docker-compose down
             docker-compose up --build -d
           EOF
