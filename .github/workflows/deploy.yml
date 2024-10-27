@@ -31,11 +31,11 @@ jobs:
         run: |
           ssh root@80.87.110.203 << 'EOF'
             cd ~/my-turborepo
-            echo "DATABASE_URL=postgresql://postgres:12345@db:5432/test-shop?schema=public" > .env
-            cat .env
             # Удаление неиспользуемых контейнеров и образов
             docker container prune -f
             docker image prune -a -f
             docker-compose down
+            echo "DATABASE_URL=postgresql://postgres:12345@db:5432/test-shop?schema=public" > .env
+            cat .env
             docker-compose up --build -d
           EOF
