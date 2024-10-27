@@ -18,6 +18,11 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
+      - name: Add SSH known hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H 80.87.110.203 >> ~/.ssh/known_hosts
+
       - name: Copy files to server
         run: |
           scp -r ./* root@80.87.110.203:~/my-turborepo
