@@ -31,6 +31,7 @@ jobs:
         run: |
           ssh root@80.87.110.203 << 'EOF'
             cd ~/my-turborepo
+            export DATABASE_URL=${{ secrets.DATABASE_URL }}
             # Удаление неиспользуемых контейнеров и образов
             docker container prune -f
             docker image prune -a -f
