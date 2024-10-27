@@ -6,6 +6,4 @@
    RUN npm install
    COPY . .
    # Логирование переменной окружения
-   RUN npx prisma migrate deploy
-   RUN npx prisma generate
    CMD ["npm", "run", "dev"]

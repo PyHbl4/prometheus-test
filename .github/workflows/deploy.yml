@@ -38,4 +38,5 @@ jobs:
             echo "DATABASE_URL=postgresql://postgres:12345@db:5432/test-shop?schema=public" > .env
             cat .env
             docker-compose up --build -d
+            docker-compose exec api npx prisma migrate deploy
           EOF
