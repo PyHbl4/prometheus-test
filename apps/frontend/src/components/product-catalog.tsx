@@ -50,7 +50,7 @@ const ProductCatalog: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(nextConfig.apiUrl, {
+        const response = await axios.get(`${nextConfig.apiUrl}/products`, {
           params: {
             color: filter.color || undefined,
             height: filter.height || undefined,
