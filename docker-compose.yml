@@ -4,6 +4,8 @@ services:
   api:
     build:
       context: ./apps/api
+    depends_on:
+      - db
     ports:
       - "3200:3200"
     env_file:
