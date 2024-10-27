@@ -8,6 +8,8 @@ services:
       - "3200:3200"
     environment:
       DATABASE_URL: "postgresql://postgres:12345@db:5432/test-shop?schema=public"
+    command: >
+      sh -c "npx prisma migrate deploy && npm run dev"
 
   frontend:
     build:
