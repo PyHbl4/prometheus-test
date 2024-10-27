@@ -20,11 +20,11 @@ name: Deploy to Server
 
          - name: Copy files to server
            run: |
-             scp -r ./* user@your-server-ip:~/my-turborepo
+             scp -r ./* root@80.87.110.203:~/my-turborepo
 
          - name: SSH commands
            run: |
-             ssh user@your-server-ip << 'EOF'
+             ssh root@80.87.110.203 << 'EOF'
                cd ~/my-turborepo
                docker-compose down
                docker-compose up --build -d

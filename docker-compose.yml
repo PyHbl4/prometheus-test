@@ -5,7 +5,7 @@ services:
     build:
       context: ./apps/api
     ports:
-      - "3000:3000"
+      - "3200:3200"
     environment:
       DATABASE_URL: "postgresql://user:password@db:5432/mydb"
 
@@ -13,16 +13,16 @@ services:
     build:
       context: ./apps/frontend
     ports:
-      - "3001:3000"
+      - "3000:3000"
     depends_on:
       - api
 
   db:
     image: postgres:17
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: mydb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: test-shop
     volumes:
       - db_data:/var/lib/postgresql/data
 
