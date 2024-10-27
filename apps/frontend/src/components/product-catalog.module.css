@@ -1,0 +1,36 @@
+.main {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    gap: 20px;
+    padding: 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-self: start;
+}
+
+.listItem {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    height: fit-content;
+    padding: 10px;
+}
+
+.productTitle {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.productPropsItem {
+    display: flex;
+    justify-content: space-between;
+}
