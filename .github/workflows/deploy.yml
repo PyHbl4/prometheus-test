@@ -32,6 +32,7 @@ jobs:
           ssh root@80.87.110.203 << 'EOF'
             cd ~/my-turborepo
             echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" > .env
+            cat .env
             # Удаление неиспользуемых контейнеров и образов
             docker container prune -f
             docker image prune -a -f
