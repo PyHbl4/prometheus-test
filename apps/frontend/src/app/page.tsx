@@ -1,6 +1,6 @@
 const HomePage: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground max-w-5xl mx-auto">
       <h1 className="text-3xl font-bold mb-4">Тестовое задание. Автор: Максим Рунков</h1>
       <p className="text-lg text-center mb-6">
         Данный проект представляет собой веб-приложение для управления каталогом товаров. 
