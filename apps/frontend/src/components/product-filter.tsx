@@ -92,7 +92,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({ setFilter }) => {
             id="color-yellow"
             value="жёлтый"
             className="mr-2"
-            onChange={() => onFilterClick("color", "жёлтый")}
+            onChange={() => onFilterClick("color", "желтый")}
           />
           <label htmlFor="color-yellow" className="cursor-pointer">
             Жёлтый
